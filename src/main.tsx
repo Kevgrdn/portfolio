@@ -1,17 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import App from "./App.tsx";
 import { HomePage } from "./pages/home/HomePage.tsx";
 import "./index.css";
+import { About } from "./pages/about/About.tsx";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const rootElement = document.getElementById("root");
+
+if (!rootElement) throw new Error("L'élément #root est introuvable");
+
+ReactDOM.createRoot(rootElement).render(
 	<React.StrictMode>
 		<Router>
 			<Routes>
 				<Route path="/" element={<App />}>
 					<Route index element={<HomePage />} />
-					<Route path="/about" element={<>hi</>} />
+					<Route path="/about" element={<About />} />
 				</Route>
 			</Routes>
 		</Router>

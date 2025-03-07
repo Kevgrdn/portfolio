@@ -5,10 +5,11 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "@fontsource/pacifico"; // Importe la police Pacifico
 
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import { Navbar } from "./layout/navbar/Navbar";
+import { CssBaseline, Stack, ThemeProvider, createTheme } from "@mui/material";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { Footer } from "./layout/footer/Footer";
+import { Navbar } from "./layout/navbar/Navbar";
 export type language = "FR" | "EN";
 
 function App() {
@@ -48,9 +49,31 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-
-			<Navbar setMode={setMode} />
-			<Outlet />
+			<Stack height={1} width={1}>
+				<Stack
+					sx={{
+						position: "sticky",
+						top: 0,
+						height: "calc(5vh)",
+						width: "100%",
+					}}
+				>
+					<Navbar setMode={setMode} />
+				</Stack>
+				<Stack sx={{ height: 1, overflow: "auto", width: "100%" }}>
+					<Outlet />
+				</Stack>
+				<Stack
+					sx={{
+						position: "sticky",
+						bottom: 0,
+						height: "calc(5vh)",
+						width: "100%",
+					}}
+				>
+					<Footer />
+				</Stack>
+			</Stack>
 		</ThemeProvider>
 	);
 }

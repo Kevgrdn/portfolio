@@ -1,5 +1,4 @@
 #root {
-	max-width: 1280px;
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
@@ -10,10 +9,6 @@
 	src: url("/fonts/Pacifico-Regular.ttf") format("truetype"); /* Chemin vers le fichier */
 	font-weight: normal;
 	font-style: normal;
-}
-
-h1 {
-	font-family: "Pacifico", cursive;
 }
 
 .logo {
