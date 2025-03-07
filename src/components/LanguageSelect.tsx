@@ -1,4 +1,4 @@
-import { Avatar, MenuItem, Select, SvgIcon, Typography } from "@mui/material";
+import { MenuItem, Select, Typography } from "@mui/material";
 import type { FC } from "react";
 import enFlag from "../assets/en.png";
 import frFlag from "../assets/fr.png";

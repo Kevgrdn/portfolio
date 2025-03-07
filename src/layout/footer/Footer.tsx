@@ -7,6 +7,7 @@ export const Footer = () => {
 				bgcolor: "#FAFAFA",
 				width: "100%",
 				height: "100%",
+				justifyContent: "flex-end",
 			}}
 		>
 			<Link

@@ -1,6 +1,4 @@
-import { Avatar, Card, Grid, Stack, Typography, styled } from "@mui/material";
-
-import { BriefcaseBusinessIcon } from "lucide-react";
+import { Avatar, Card, Stack, styled, Typography } from "@mui/material";
 import css from "../../assets/stackIcons/css-3.png";
 import express from "../../assets/stackIcons/expres.png";
 import figma from "../../assets/stackIcons/figma.png";
@@ -15,11 +13,8 @@ import react from "../../assets/stackIcons/react.png";
 import ts from "../../assets/stackIcons/ts.png";
 import vsp from "../../assets/stackIcons/visual paradigm.png";
 import vscode from "../../assets/stackIcons/vscode.png";
-import { HomeCompetences } from "../../features/Home/Competences";
-import { HomeContact } from "../../features/Home/Contact";
-import { HomeMeCard } from "../../features/Home/Me";
 
-export const HomePage = () => {
+export const HomeMeCard = () => {
 	const icons = [
 		{ id: 1, icon: css, alt: "CSS" },
 		{ id: 5, icon: html, alt: "HTML" },
@@ -56,59 +51,72 @@ export const HomePage = () => {
   `;
 
 	return (
-		<Stack width={1} height={1} justifyContent={"center"} alignItems={"center"}>
-			<Stack sx={{ width: "75%" }}>
-				<Grid container spacing={2}>
-					<Grid item xs={12} md={6}>
-						<HomeMeCard />
-					</Grid>
-					<Grid item xs={12} md={6}>
-						<Stack spacing={3}>
-							<Card
+		<Card
+			sx={{
+				backgroundColor: "#F7F8F9",
+				borderRadius: "1rem",
+				padding: "3rem",
+				boxShadow: "none",
+			}}
+		>
+			<Stack direction={"row"} spacing={2} justifyContent={"space-evenly"}>
+				<Stack justifyContent={"center"} alignContent={"center"}>
+					<Avatar
+						src="/src/assets/me.jpg"
+						sx={{
+							height: "10rem",
+							width: "10rem",
+							border: "5px solid #8DDEAC ",
+						}}
+					/>
+				</Stack>
+
+				<Stack sx={{ overflowX: "hidden" }} justifyContent={"space-between"}>
+					<Stack justifyContent={"flex-start"}>
+						<Typography
+							variant="h6"
+							sx={{ fontWeight: "400", alignSelf: "self-start" }}
+						>
+							Bienvenue👋
+						</Typography>
+						<Typography
+							variant="h5"
+							sx={{ fontWeight: "600", alignSelf: "self-start" }}
+						>
+							Je suis Kévin Grondin,
+						</Typography>
+						<Typography
+							variant="h5"
+							sx={{
+								fontWeight: "400",
+								overflow: "hidden",
+								alignSelf: "self-start",
+							}}
+							className={"typewriter"}
+							width={"auto"}
+						>
+							Développeur fullstack
+						</Typography>
+						<Stack direction={"row"}>
+							<Typography
+								variant="body2"
 								sx={{
-									boxShadow: "none",
-									backgroundColor: "#F7F8F9",
-									borderRadius: "1rem",
-									px: "3rem",
-									py: "1.5rem",
+									fontWeight: "400",
+									color: "grey",
+									textAlign: "start",
 								}}
 							>
-								<ScrollStack direction={"row"} spacing={1}>
-									<Typography variant="body2" fontWeight={700}>
-										Je suis actuellement disponible pour toute mission de
-										<span
-											style={{
-												color: "#8DDEAC",
-											}}
-										>
-											&nbsp;freelance
-										</span>
-										.
-									</Typography>
-									<BriefcaseBusinessIcon size={16} />
-								</ScrollStack>
-							</Card>
-							<Stack direction={"row"} spacing={3}>
-								<Card
-									sx={{
-										boxShadow: "none",
-										backgroundColor: "#F7F8F9",
-										borderRadius: "1rem",
-										padding: "3rem",
-										flexGrow: 1,
-									}}
-								>
-									2
-								</Card>
-								<HomeContact />
-							</Stack>
+								Je suis un développeur d'applications basé en Indre et Loire.
+							</Typography>
 						</Stack>
-					</Grid>
-					<Grid item xs={12}>
-						<HomeCompetences />
-					</Grid>
-				</Grid>
+					</Stack>
+					<ScrollStack direction={"row"} spacing={1}>
+						{icons.map(({ icon, id, alt }) => (
+							<img src={icon} key={id} alt={alt} style={{ height: "2rem" }} />
+						))}
+					</ScrollStack>
+				</Stack>
 			</Stack>
-		</Stack>
+		</Card>
 	);
 };

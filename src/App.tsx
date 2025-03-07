@@ -60,13 +60,11 @@ function App() {
 				>
 					<Navbar setMode={setMode} />
 				</Stack>
-				<Stack sx={{ height: 1, overflow: "auto", width: "100%" }}>
+				<Stack sx={{ height: "calc(90vh)", overflow: "auto", width: "100%" }}>
 					<Outlet />
 				</Stack>
 				<Stack
 					sx={{
-						position: "sticky",
-						bottom: 0,
 						height: "calc(5vh)",
 						width: "100%",
 					}}

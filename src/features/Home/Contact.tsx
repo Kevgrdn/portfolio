@@ -1,13 +1,11 @@
-import { GitHub } from "@mui/icons-material";
 import {
 	Card,
 	CardContent,
 	CardHeader,
 	Stack,
-	SvgIcon,
 	Typography,
 } from "@mui/material";
-import { LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react";
+import { MailIcon, PhoneIcon } from "lucide-react";
 import linkedin from "../../assets/linkedin.svg";
 import github from "../../assets/github.svg";
 import { useState } from "react";
