@@ -39,7 +39,7 @@ export const Navbar: React.FC<Props> = ({ setMode }) => {
 					width={"100%"}
 				>
 					<Stack>
-						<Link href="/" sx={{ textDecoration: "none", color: "inherit" }}>
+						<Link href="/" sx={{ textDecoration: "none" }}>
 							<Typography
 								variant="h5"
 								style={{ fontFamily: "Pacifico" }}

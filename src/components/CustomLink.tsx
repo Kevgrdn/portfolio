@@ -1,4 +1,4 @@
-import { Link, Typography } from "@mui/material";
+import { Link, Typography, useTheme } from "@mui/material";
 import type { FC } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -6,6 +6,7 @@ type CustomLinkProps = { href: string; title: string };
 
 export const CustomLink: FC<CustomLinkProps> = ({ href, title }) => {
 	const loc = useLocation();
+	const theme = useTheme();
 
 	return (
 		<Link
@@ -21,7 +22,9 @@ export const CustomLink: FC<CustomLinkProps> = ({ href, title }) => {
 		>
 			<Typography
 				variant="subtitle1"
-				color={href === loc.pathname ? "green" : "grey"}
+				color={
+					href === loc.pathname ? `{${theme.palette.primary.main}}` : "grey"
+				}
 				fontWeight={500}
 			>
 				{title}

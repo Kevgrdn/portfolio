@@ -1,4 +1,11 @@
-import { Avatar, Card, Stack, styled, Typography } from "@mui/material";
+import {
+	Avatar,
+	Card,
+	Stack,
+	styled,
+	Typography,
+	useTheme,
+} from "@mui/material";
 import css from "../../assets/stackIcons/css-3.png";
 import express from "../../assets/stackIcons/expres.png";
 import figma from "../../assets/stackIcons/figma.png";
@@ -32,6 +39,7 @@ export const HomeMeCard = () => {
 		{ id: 14, icon: vscode, alt: "Visual Studio Code" },
 	];
 
+	const theme = useTheme();
 	const ScrollStack = styled(Stack)`
 	overflow-x: hidden;
 	white-space: nowrap;
@@ -57,6 +65,9 @@ export const HomeMeCard = () => {
 				borderRadius: "1rem",
 				padding: "3rem",
 				boxShadow: "none",
+				":hover": {
+					boxShadow: `0px 0px 8px 0px ${theme.palette.primary.main}`,
+				},
 			}}
 		>
 			<Stack direction={"row"} spacing={2} justifyContent={"space-evenly"}>
@@ -66,7 +77,7 @@ export const HomeMeCard = () => {
 						sx={{
 							height: "10rem",
 							width: "10rem",
-							border: "5px solid #8DDEAC ",
+							border: `5px solid ${theme.palette.primary.main} `,
 						}}
 					/>
 				</Stack>

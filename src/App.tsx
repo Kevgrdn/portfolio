@@ -21,29 +21,29 @@ function App() {
 	const theme = createTheme({
 		palette: {
 			primary: {
-				main: "#A2D2FF", // Couleur principale
-				dark: "#415a77",
-				light: "#d5dee8",
+				main: "#2A9D8F", // Vert turquoise
 			},
 			secondary: {
-				main: "#eff0ee",
-				dark: "#e0e1dd",
-				light: "#f9f9f8",
-				// Couleur secondaire
+				main: "#E9C46A", // Jaune sable
+			},
+			error: {
+				main: "#E76F51", // Rouge corail
+			},
+			warning: {
+				main: "#F4A261", // Orange
+			},
+			info: {
+				main: "#264653", // Bleu foncé
 			},
 			background: {
-				default: mode === "dark" ? "#CDB4DB" : "#FFFFFF",
+				paper: "#F4F4F4", // Blanc légèrement gris
+				default: "#FFFFFF",
 			},
-			mode,
-
-			// Autres options de la palette comme error, warning, etc.
+			text: {
+				primary: "#264653", // Bleu foncé pour le texte
+				secondary: "#2A9D8F", // Vert turquoise pour les accents
+			},
 		},
-		typography: {
-			fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-			fontSize: 14,
-			// Autres configurations de la typographie
-		},
-		// Vous pouvez ajouter d'autres configurations comme shadows, spacing, etc.
 	});
 
 	return (

@@ -5,6 +5,7 @@ import {
 	Grid,
 	Stack,
 	Typography,
+	useTheme,
 } from "@mui/material";
 import {
 	AppWindowIcon,
@@ -17,6 +18,7 @@ import {
 } from "lucide-react";
 
 export const HomeCompetences = () => {
+	const theme = useTheme();
 	const CompetenceSection = ({
 		title,
 		icon,
@@ -41,6 +43,7 @@ export const HomeCompetences = () => {
 		);
 	};
 
+	const iconColor = theme.palette.primary.main;
 	return (
 		<Card
 			sx={{
@@ -51,7 +54,7 @@ export const HomeCompetences = () => {
 				px: "3rem",
 				py: "1rem",
 				":hover": {
-					boxShadow: "0px 0px 10px 0px #E1E2E3",
+					boxShadow: `0px 0px 8px 0px ${theme.palette.primary.main}`,
 				},
 			}}
 		>
@@ -68,7 +71,7 @@ export const HomeCompetences = () => {
 						<Typography variant="h5" fontWeight="600" width={"auto"}>
 							Mes compétences
 						</Typography>
-						<CodeIcon size={20} color="#8DDEAC" />
+						<CodeIcon size={20} color={iconColor} />
 					</Stack>
 				}
 				titleTypographyProps={{ width: "auto" }}
@@ -76,27 +79,27 @@ export const HomeCompetences = () => {
 			<CardContent>
 				<Grid container spacing={2}>
 					<CompetenceSection
-						icon={<AppWindowIcon color="#8DDEAC" />}
+						icon={<AppWindowIcon color={iconColor} />}
 						title={"Interface utilisateur"}
 						description="Création d'interfaces utilisateur modernes, responsives et intuitives avec React et Next.js"
 					/>
 					<CompetenceSection
-						icon={<ServerIcon color="#8DDEAC" />}
+						icon={<ServerIcon color={iconColor} />}
 						title={"Architecture Backend"}
 						description="Conception et développement d'architectures robustes et scalables pour le backend avec Node.js, Express.js ou NestJS"
 					/>
 					<CompetenceSection
-						icon={<DatabaseIcon color="#8DDEAC" />}
+						icon={<DatabaseIcon color={iconColor} />}
 						title={"Déploiement et gestion de bases de données"}
 						description="Déploiement et gestion de bases de données avec MongoDB, PostgreSQL ou MySQL"
 					/>
 					<CompetenceSection
-						icon={<ShieldCheckIcon color="#8DDEAC" />}
+						icon={<ShieldCheckIcon color={iconColor} />}
 						title={"Qualité et performance"}
 						description="Optimisation des performances et garantie de la qualité du code avec tests unitaires, linting et documentation"
 					/>
 					<CompetenceSection
-						icon={<BotIcon color="#8DDEAC" />}
+						icon={<BotIcon color={iconColor} />}
 						title={"Réalisation et déploiement de bots"}
 						description="Création de bot discord avec Node.js et Discord.js"
 					/>
