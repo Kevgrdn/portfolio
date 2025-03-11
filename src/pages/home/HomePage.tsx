@@ -39,7 +39,7 @@ export const HomePage = () => {
 					</Grid>
 					<Grid item xs={12} md={6}>
 						<Stack spacing={2}>
-							<Card sx={{ height: "1rem" }}>
+							<Card>
 								<ScrollStack direction={"row"} spacing={1}>
 									<Typography variant="body2" fontWeight={700}>
 										Je suis actuellement disponible pour toute mission de

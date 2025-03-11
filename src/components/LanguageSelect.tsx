@@ -1,36 +1,62 @@
-import { MenuItem, Select, Typography } from "@mui/material";
-import type { FC } from "react";
+import { Switch, styled } from "@mui/material";
 import enFlag from "../assets/en.png";
 import frFlag from "../assets/fr.png";
-import { Language } from "../interfaces/language";
 
-type Props = {
-	language: Language;
-};
+export const LanguageSelect = () => {
+	const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+		width: 62,
+		height: 34,
+		padding: 7,
+		"& .MuiSwitch-switchBase": {
+			margin: 1,
+			padding: 0,
+			transform: "translateX(6px)",
+			"&.Mui-checked": {
+				color: "#fff",
+				transform: "translateX(22px)",
+				"& .MuiSwitch-thumb:before": {
+					backgroundSize: "cover",
+					backgroundImage: `url(${enFlag})`,
+					border: "1px solid white",
+					borderRadius: "50%",
+				},
+				"& + .MuiSwitch-track": {
+					opacity: 1,
+					backgroundColor: "#aab4be",
+					...theme.applyStyles("dark", {
+						backgroundColor: "#8796A5",
+					}),
+				},
+			},
+		},
+		"& .MuiSwitch-thumb": {
+			backgroundColor: "#001e3c",
+			width: 32,
+			height: 32,
+			"&::before": {
+				content: "''",
+				position: "absolute",
+				width: "100%",
+				height: "100%",
+				left: 0,
+				top: 0,
+				backgroundRepeat: "no-repeat",
+				backgroundPosition: "center",
+				backgroundSize: "cover",
+				backgroundImage: `url(${frFlag})`,
+				border: "1px solid white",
+				borderRadius: "50%",
+			},
+		},
+		"& .MuiSwitch-track": {
+			opacity: 1,
+			backgroundColor: "#aab4be",
+			borderRadius: 20 / 2,
+			...theme.applyStyles("dark", {
+				backgroundColor: "#8796A5",
+			}),
+		},
+	}));
 
-export const LanguageSelect: FC<Props> = ({ language }) => {
-	const languages = [
-		{ code: Language.FR, label: "FR", flag: frFlag },
-		{ code: Language.EN, label: "EN", flag: enFlag },
-	];
-
-	return (
-		<Select size="small" value={language}>
-			{languages.map((lang) => (
-				<MenuItem
-					key={lang.code}
-					sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						gap: 1,
-					}}
-					value={lang.code}
-				>
-					{/* <Avatar src={lang.flag} sx={{ height: 24, width: 24 }} /> */}
-					<Typography variant="caption">{lang.label}</Typography>
-				</MenuItem>
-			))}
-		</Select>
-	);
+	return <MaterialUISwitch />;
 };

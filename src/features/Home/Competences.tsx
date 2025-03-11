@@ -5,7 +5,6 @@ import {
 	Grid,
 	Stack,
 	Typography,
-	useTheme,
 } from "@mui/material";
 import {
 	AppWindowIcon,
@@ -29,18 +28,14 @@ export const HomeCompetences = () => {
 	}) => {
 		return (
 			<Grid item xs={12} md={6}>
-				<Stack
-					spacing={1}
-					alignItems={"flex-start"}
-					sx={{ textAlign: "start" }}
-				>
+				<Stack alignItems={"flex-start"} sx={{ textAlign: "start" }}>
 					<Stack direction={"row"} gap={1}>
 						{icon}
 						<Typography variant="subtitle1" fontWeight={700}>
 							{title}
 						</Typography>
 					</Stack>
-					<Typography>{description}</Typography>
+					<Typography variant="subtitle2">{description}</Typography>
 				</Stack>
 			</Grid>
 		);

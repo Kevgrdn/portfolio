@@ -2,7 +2,6 @@
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
-	
 }
 
 @font-face {
@@ -67,6 +66,6 @@
 	display: inline;
 	white-space: nowrap;
 	overflow: hidden;
-	border-right: 3px solid black; /* Barre de l'effet de frappe */
+	border-right: 3px solid white; /* Barre de l'effet de frappe */
 	animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
 }

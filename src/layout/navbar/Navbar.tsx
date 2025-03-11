@@ -1,28 +1,10 @@
-import { Link, Stack, styled, Switch, useTheme } from "@mui/material";
+import { Link, Stack, Switch, styled } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { MoonIcon, SunIcon } from "lucide-react";
-import * as React from "react";
 import { CustomLink } from "../../components/CustomLink";
 import { LanguageSelect } from "../../components/LanguageSelect";
-import type { Language } from "../../interfaces/language";
 
-type Props = {
-	setMode: (mode: "light" | "dark") => void;
-};
-
-export const Navbar: React.FC<Props> = ({ setMode }) => {
-	const [checked, setChecked] = React.useState(true);
-
-	const theme = useTheme();
-
-	const handleChangeThemeMode = () => {
-		const color = theme.palette.mode === "light" ? "dark" : "light";
-
-		setMode(color);
-	};
-
+export const Navbar = () => {
 	const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 		width: 62,
 		height: 34,
@@ -65,8 +47,9 @@ export const Navbar: React.FC<Props> = ({ setMode }) => {
 					"#fff",
 				)}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
 			},
-			...theme.applyStyles("dark", {
-				backgroundColor: "#003892",
+			...theme.applyStyles("light", {
+				background: theme.palette.background.default,
+				border: "1px solid white",
 			}),
 		},
 		"& .MuiSwitch-track": {
@@ -115,9 +98,9 @@ export const Navbar: React.FC<Props> = ({ setMode }) => {
 						<CustomLink href="/contact" title="Contact" />
 					</Stack>
 					<Stack direction={"row"} spacing={1}>
-						<MaterialUISwitch size="small" disabled />
+						<MaterialUISwitch size="small" />
 
-						<LanguageSelect language={"FR" as Language} />
+						<LanguageSelect />
 					</Stack>
 				</Stack>
 			</Toolbar>

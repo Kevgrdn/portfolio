@@ -35,7 +35,7 @@ export const Footer = () => {
 				<Typography variant="caption">Tous droits réservés</Typography>
 				<Link
 					variant="caption"
-					href="https://grondin-kevin.fr/mentions-legales"
+					href="/mentions-legales"
 					sx={{
 						textDecoration: "none",
 						":hover": { textDecoration: "underline" },

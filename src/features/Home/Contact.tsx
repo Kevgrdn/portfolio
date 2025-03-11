@@ -1,5 +1,4 @@
 import {
-	Box,
 	Card,
 	CardContent,
 	CardHeader,
@@ -10,13 +9,7 @@ import {
 	Typography,
 	useTheme,
 } from "@mui/material";
-import {
-	ExternalLinkIcon,
-	Github,
-	LinkedinIcon,
-	MailIcon,
-	PhoneIcon,
-} from "lucide-react";
+import { Github, LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react";
 
 export const HomeContact = () => {
 	const iconSize = 20;
@@ -26,24 +19,26 @@ export const HomeContact = () => {
 	const SocialIcon = ({
 		title,
 		Icon,
-	}: { title: string; Icon: React.ReactElement }) => {
+		link,
+	}: { title: string; Icon: React.ReactElement; link: string }) => {
 		return (
 			<Tooltip title={title}>
-				<Stack
-					sx={{
-						p: 0.5,
-						borderRadius: "0.5rem",
-						":hover": {
-							cursor: "pointer",
-							boxShadow: "0 0 10px #FFFFFF",
-							backgroundColor: "white",
-							color:
-								"linear-gradient(to bottom right, rgb(83, 140, 247),rgb(194, 45, 181))",
-						},
-					}}
-				>
-					{Icon}
-				</Stack>
+				<Link href={link} target="blank">
+					<Stack
+						sx={{
+							p: 0.5,
+							borderRadius: "0.5rem",
+							":hover": {
+								cursor: "pointer",
+								boxShadow: "0 0 1rem #FFFFFF",
+								color:
+									"linear-gradient(to bottom right, rgb(83, 140, 247),rgb(194, 45, 181))",
+							},
+						}}
+					>
+						{Icon}
+					</Stack>
+				</Link>
 			</Tooltip>
 		);
 	};
@@ -56,6 +51,7 @@ export const HomeContact = () => {
 				p: 1,
 				flexGrow: 1,
 				height: "100%",
+				width: "50%",
 			}}
 		>
 			<CardHeader
@@ -76,10 +72,12 @@ export const HomeContact = () => {
 			<CardContent>
 				<Stack spacing={0.5} direction={"row"} justifyContent={"space-evenly"}>
 					<SocialIcon
+						link="https://www.linkedin.com/in/k%C3%A9vin-grondin-132848164/"
 						title="Voir le profil Linkedin"
 						Icon={<LinkedinIcon size={iconSize} />}
 					/>
 					<SocialIcon
+						link="https://github.com/Kevgrdn"
 						title="Voir le profil Github"
 						Icon={<Github size={iconSize} />}
 					/>
@@ -92,9 +90,11 @@ export const HomeContact = () => {
 
 					<SocialIcon
 						title="Contacter par mail"
+						link="/contact"
 						Icon={<MailIcon size={iconSize} />}
 					/>
 					<SocialIcon
+						link="/contact"
 						title="Contacter par téléphone"
 						Icon={<PhoneIcon size={iconSize} />}
 					/>

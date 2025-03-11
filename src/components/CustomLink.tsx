@@ -1,4 +1,4 @@
-import { Link, Typography, useTheme } from "@mui/material";
+import { Link } from "@mui/material";
 import type { FC } from "react";
 import { useLocation } from "react-router-dom";
 

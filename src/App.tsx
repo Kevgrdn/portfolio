@@ -6,7 +6,6 @@ import "@fontsource/roboto/700.css";
 import "@fontsource/pacifico"; // Importe la police Pacifico
 
 import { CssBaseline, Stack, ThemeProvider, createTheme } from "@mui/material";
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Footer } from "./layout/footer/Footer";
 import { Navbar } from "./layout/navbar/Navbar";
@@ -16,34 +15,38 @@ function App() {
 	// const [language, setLanguage] = useState<language>("FR");
 	//   const theme = useTheme();
 
-	const [mode, setMode] = useState<"light" | "dark">("light");
+	// const [mode, setMode] = useState<"light" | "dark">("light");
 
 	const theme = createTheme({
 		palette: {
 			primary: {
-				main: "#FFFFFF", // Vert turquoise
+				main: "rgb(255, 255, 255)", // Blanc
+				light: "rgb(244, 244, 244)",
 			},
 			secondary: {
-				main: "#F4F4F4", // Jaune sable
+				main: "rgb(244, 244, 244)", // Gris clair
+				light: "rgb(244, 244, 244)",
 			},
 			error: {
-				main: "#E76F51", // Rouge corail
+				main: "rgb(231, 111, 81)", // Rouge corail
+				light: "rgb(244, 244, 244)",
 			},
 			warning: {
-				main: "#F4A261", // Orange
+				main: "rgb(242, 164, 97)", // Orange
+				light: "rgb(244, 244, 244)",
 			},
 			info: {
-				main: "#264653", // Bleu foncé
+				main: "rgb(38, 70, 83)", // Bleu foncé
 			},
 			background: {
-				paper: "#F4F4F4", // Blanc légèrement gris
+				paper: "rgb(244, 244, 244)", // Blanc légèrement gris
 				default:
-					"linear-gradient(to bottom right, rgb(83, 140, 247),rgb(194, 45, 181))",
+					"linear-gradient(to bottom right, rgb(83, 140, 247), rgb(194, 45, 181))",
 			},
 			text: {
-				primary: "white", // Bleu foncé pour le texte
-				secondary: "white", // Vert turquoise pour les accents
-				disabled: "grey", // Gris clair pour les textes non actifs
+				primary: "rgb(255, 255, 255)", // Blanc pour le texte
+				secondary: "rgb(255, 255, 255)", // Blanc pour les accents
+				disabled: "rgb(128, 128, 128)", // Gris clair pour les textes non actifs
 			},
 		},
 		components: {
@@ -82,7 +85,7 @@ function App() {
 						width: "100%",
 					}}
 				>
-					<Navbar setMode={setMode} />
+					<Navbar />
 				</Stack>
 				<Stack
 					sx={{
