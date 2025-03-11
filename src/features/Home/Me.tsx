@@ -59,17 +59,7 @@ export const HomeMeCard = () => {
   `;
 
 	return (
-		<Card
-			sx={{
-				backgroundColor: "#F7F8F9",
-				borderRadius: "1rem",
-				padding: "3rem",
-				boxShadow: "none",
-				":hover": {
-					boxShadow: `0px 0px 8px 0px ${theme.palette.primary.main}`,
-				},
-			}}
-		>
+		<Card sx={{ height: "100%" }}>
 			<Stack direction={"row"} spacing={2} justifyContent={"space-evenly"}>
 				<Stack justifyContent={"center"} alignContent={"center"}>
 					<Avatar
@@ -113,7 +103,6 @@ export const HomeMeCard = () => {
 								variant="body2"
 								sx={{
 									fontWeight: "400",
-									color: "grey",
 									textAlign: "start",
 								}}
 							>

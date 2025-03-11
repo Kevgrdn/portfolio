@@ -4,7 +4,7 @@ export const Footer = () => {
 	return (
 		<Stack
 			sx={{
-				bgcolor: "#FAFAFA",
+				background: "inherit",
 				width: "100%",
 				height: "100%",
 				justifyContent: "flex-end",
@@ -29,21 +29,19 @@ export const Footer = () => {
 				alignContent={"center"}
 				gap={1}
 			>
-				<Typography variant="caption" color={"grey"}>
+				<Typography variant="caption">
 					© {new Date().getFullYear()} Grondin Kévin
 				</Typography>
-				<Typography variant="caption" color={"grey"}>
-					Tous droits réservés
-				</Typography>
+				<Typography variant="caption">Tous droits réservés</Typography>
 				<Link
+					variant="caption"
 					href="https://grondin-kevin.fr/mentions-legales"
 					sx={{
 						textDecoration: "none",
-						color: "inherit",
 						":hover": { textDecoration: "underline" },
 					}}
 				>
-					<Typography sx={{ height: "100%" }} variant="caption" color={"grey"}>
+					<Typography sx={{ height: "100%" }} variant="caption">
 						Mentions légales
 					</Typography>
 				</Link>

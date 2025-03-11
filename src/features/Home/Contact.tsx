@@ -17,26 +17,9 @@ import {
 	MailIcon,
 	PhoneIcon,
 } from "lucide-react";
-import { useState } from "react";
-import { keyframes } from "@mui/material";
 
 export const HomeContact = () => {
 	const iconSize = 20;
-
-	const [isHovered, setIsHovered] = useState(false);
-
-	const fadeIn = keyframes`
-0% {
-  opacity: 0;
-}
-  50% {
-  opacity: 0.5;
-  width: auto
-  }
-  100% {
-	opacity: 1;
-	width: auto
-}`;
 
 	const theme = useTheme();
 
@@ -50,7 +33,13 @@ export const HomeContact = () => {
 					sx={{
 						p: 0.5,
 						borderRadius: "0.5rem",
-						":hover": { cursor: "pointer", backgroundColor: "grey" },
+						":hover": {
+							cursor: "pointer",
+							boxShadow: "0 0 10px #FFFFFF",
+							backgroundColor: "white",
+							color:
+								"linear-gradient(to bottom right, rgb(83, 140, 247),rgb(194, 45, 181))",
+						},
 					}}
 				>
 					{Icon}
@@ -62,51 +51,16 @@ export const HomeContact = () => {
 	return (
 		<Card
 			sx={{
-				boxShadow: "none",
-				backgroundColor: "#F7F8F9",
-				borderRadius: "1rem",
+				display: "flex",
+				flexDirection: "column",
+				p: 1,
 				flexGrow: 1,
-				position: "relative",
-				":hover": {
-					boxShadow: `0px 0px 8px 0px ${theme.palette.primary.main}`,
-				},
+				height: "100%",
 			}}
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
 		>
-			{isHovered && (
-				<Link
-					sx={{
-						position: "absolute",
-						top: 0,
-						bgcolor: theme.palette.primary.main,
-						right: 0,
-						borderRadius: "0 0 0 0.5rem",
-						textDecoration: "none",
-						animation: `${fadeIn} 0.5s ease-in-out`,
-					}}
-					href="/contact"
-				>
-					<Stack direction={"row"} alignItems={"center"} gap={0.5} p={1}>
-						<Typography
-							variant="caption"
-							sx={{ fontWeight: "700" }}
-							color={"white"}
-						>
-							Me contacter
-						</Typography>
-						<ExternalLinkIcon size={14} color="white" />
-					</Stack>
-				</Link>
-			)}
 			<CardHeader
 				title={
-					<Stack
-						direction={"row"}
-						alignContent={"center"}
-						alignItems={"center"}
-						spacing={0.5}
-					>
+					<Stack direction={"row"} spacing={0.25} alignItems={"center"}>
 						<Typography alignSelf={"start"} variant="body1" fontWeight="600">
 							Me contacter
 						</Typography>
@@ -116,7 +70,6 @@ export const HomeContact = () => {
 				subheader={"Pour plus de renseignements"}
 				subheaderTypographyProps={{
 					variant: "caption",
-					color: "grey",
 					textAlign: "start",
 				}}
 			/>
@@ -131,13 +84,16 @@ export const HomeContact = () => {
 						Icon={<Github size={iconSize} />}
 					/>
 
-					<Divider orientation="vertical" flexItem />
+					<Divider
+						orientation="vertical"
+						sx={{ backgroundColor: "white" }}
+						flexItem
+					/>
 
 					<SocialIcon
 						title="Contacter par mail"
 						Icon={<MailIcon size={iconSize} />}
 					/>
-
 					<SocialIcon
 						title="Contacter par téléphone"
 						Icon={<PhoneIcon size={iconSize} />}

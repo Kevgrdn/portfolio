@@ -6,42 +6,27 @@ type CustomLinkProps = { href: string; title: string };
 
 export const CustomLink: FC<CustomLinkProps> = ({ href, title }) => {
 	const loc = useLocation();
-	const theme = useTheme();
 
 	return (
 		<Link
+			variant="subtitle1"
 			sx={{
 				textDecoration: "none",
 				transition: "text-decoration 0.3s ease-in-out",
+				fontWeight: 500,
+				...(href === loc.pathname && {
+					textDecoration: "underline",
+					textShadow: "0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF",
+				}),
 				":hover": {
 					textDecoration: "underline",
 					transition: "text-decoration 0.3s ease-in-out",
+					textShadow: "0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF",
 				},
 			}}
 			href={href}
 		>
-			<Typography
-				variant="subtitle1"
-				color={
-					href === loc.pathname ? `{${theme.palette.primary.main}}` : "grey"
-				}
-				fontWeight={500}
-			>
-				{title}
-			</Typography>
-			<span
-				style={{
-					position: "absolute",
-					bottom: 0,
-					left: 0,
-					width: "100%",
-					height: 2,
-					backgroundColor: "green",
-					opacity: 0,
-					transform: "scaleX(0)",
-					transition: "opacity 0.3s, transform 0.3s",
-				}}
-			/>
+			{title}
 		</Link>
 	);
 };

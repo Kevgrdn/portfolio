@@ -1,12 +1,4 @@
-import {
-	Avatar,
-	Card,
-	Grid,
-	Stack,
-	Typography,
-	styled,
-	useTheme,
-} from "@mui/material";
+import { Card, Grid, Stack, Typography, styled, useTheme } from "@mui/material";
 
 import { BriefcaseBusinessIcon } from "lucide-react";
 
@@ -31,7 +23,7 @@ export const HomePage = () => {
 	@keyframes scroll-left {
 	  0% {
 		transform: translateX(100%);
-	  }
+	  } 
 	  100% {
 		transform: translateX(-100%);
 	  }
@@ -46,19 +38,8 @@ export const HomePage = () => {
 						<HomeMeCard />
 					</Grid>
 					<Grid item xs={12} md={6}>
-						<Stack spacing={3}>
-							<Card
-								sx={{
-									boxShadow: "none",
-									backgroundColor: "#F7F8F9",
-									borderRadius: "1rem",
-									px: "3rem",
-									py: "1.5rem",
-									":hover": {
-										boxShadow: `0px 0px 8px 0px ${theme.palette.primary.main}`,
-									},
-								}}
-							>
+						<Stack spacing={2}>
+							<Card sx={{ height: "1rem" }}>
 								<ScrollStack direction={"row"} spacing={1}>
 									<Typography variant="body2" fontWeight={700}>
 										Je suis actuellement disponible pour toute mission de
@@ -74,7 +55,7 @@ export const HomePage = () => {
 									<BriefcaseBusinessIcon size={16} />
 								</ScrollStack>
 							</Card>
-							<Stack direction={"row"} spacing={3}>
+							<Stack direction={"row"} spacing={2}>
 								<HomeStack />
 								<HomeContact />
 							</Stack>
