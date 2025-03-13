@@ -1,4 +1,4 @@
-import { Link, Stack, Switch, styled } from "@mui/material";
+import { Link, Stack, Switch, styled, useTheme } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { CustomLink } from "../../components/CustomLink";
@@ -62,12 +62,16 @@ export const Navbar = () => {
 		},
 	}));
 
+	const theme = useTheme();
 	return (
 		<AppBar
 			sx={{
 				background: "inherit",
+				backgroundColor: theme.palette.background.default,
 				border: "none",
-				boxShadow: "none",
+				zIndex: 1,
+				boxShadow: window.scrollY > 10 ? "10px" : "none",
+				position: "sticky",
 			}}
 		>
 			<Toolbar>

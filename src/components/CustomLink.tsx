@@ -9,11 +9,10 @@ export const CustomLink: FC<CustomLinkProps> = ({ href, title }) => {
 
 	return (
 		<Link
-			variant="subtitle1"
+			variant="subtitle2"
 			sx={{
 				textDecoration: "none",
 				transition: "text-decoration 0.3s ease-in-out",
-				fontWeight: 500,
 				...(href === loc.pathname && {
 					textDecoration: "underline",
 					textShadow: "0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF",

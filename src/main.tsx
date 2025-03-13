@@ -6,6 +6,7 @@ import { HomePage } from "./pages/home/HomePage.tsx";
 import "./index.css";
 import { About } from "./pages/about/About.tsx";
 import { MentionsLegales } from "./pages/legal/MentionsLegales.tsx";
+import { Competences } from "./pages/competences/Competences.tsx";
 
 const rootElement = document.getElementById("root");
 
@@ -18,7 +19,8 @@ ReactDOM.createRoot(rootElement).render(
 				<Route path="/" element={<App />}>
 					<Route index element={<HomePage />} />
 					<Route path="/about" element={<About />} />
-					<Route path="/mentions-legales" element={<MentionsLegales />} />
+					<Route path="/competences" element={<Competences />} />
+					<Route path="/mentions" element={<MentionsLegales />} />
 				</Route>
 			</Routes>
 		</Router>

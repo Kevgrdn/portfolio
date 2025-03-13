@@ -52,7 +52,7 @@ export const MentionsLegales = () => {
 			<Card sx={{ width: "50%" }}>
 				<CardHeader
 					title="Mentions Légales"
-					titleTypographyProps={{ variant: "h5", fontWeight: "bold" }}
+					titleTypographyProps={{ variant: "h5", fontWeight: "bold", p: 1 }}
 					subheader="Informations légales et conditions d'utilisation"
 					subheaderTypographyProps={{
 						variant: "subtitle1",
@@ -67,7 +67,7 @@ export const MentionsLegales = () => {
 								title="Propriétaire du site"
 								subheader="Informations relatives au propriétaire"
 							/>
-							<Stack sx={{ alignItems: "flex-start" }}>
+							<Stack sx={{ alignItems: "flex-start" }} spacing={0.5}>
 								<Typography variant="body2">Grondin Kévin</Typography>
 
 								<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
@@ -99,7 +99,7 @@ export const MentionsLegales = () => {
 								title="Hébergeur"
 								subheader="Informations relatives à l'hébergeur"
 							/>
-							<Stack sx={{ alignItems: "flex-start" }}>
+							<Stack sx={{ alignItems: "flex-start" }} spacing={0.5}>
 								<Typography variant="body2">
 									HOSTINGER operations, UAB
 								</Typography>

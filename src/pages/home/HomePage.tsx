@@ -56,8 +56,12 @@ export const HomePage = () => {
 								</ScrollStack>
 							</Card>
 							<Stack direction={"row"} spacing={2}>
-								<HomeStack />
-								<HomeContact />
+								<Stack width={"50%"}>
+									<HomeStack />
+								</Stack>
+								<Stack width={"50%"}>
+									<HomeContact />
+								</Stack>
 							</Stack>
 						</Stack>
 					</Grid>

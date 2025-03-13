@@ -1,50 +1,84 @@
-import { Link, Stack, Typography } from "@mui/material";
+import { Card, Link, Stack, Typography, useTheme } from "@mui/material";
 
 export const Footer = () => {
-	return (
-		<Stack
-			sx={{
-				background: "inherit",
-				width: "100%",
-				height: "100%",
-				justifyContent: "flex-end",
-			}}
-		>
-			<Link
-				href="https://grondin-kevin.fr"
-				sx={{ textDecoration: "none", color: "inherit" }}
-			>
-				<Typography
-					variant="subtitle2"
-					sx={{ ":hover": { textDecoration: "underline" } }}
-				>
-					grondin-kevin.fr
-				</Typography>
-			</Link>
+	const theme = useTheme();
 
+	return (
+		<Stack>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<title>Wave</title>
+				<path
+					fill="#FFFFFF"
+					fill-opacity="1"
+					d="M0,160L20,170.7C40,181,80,203,120,213.3C160,224,200,224,240,197.3C280,171,320,117,360,106.7C400,96,440,128,480,122.7C520,117,560,75,600,90.7C640,107,680,181,720,213.3C760,245,800,235,840,208C880,181,920,139,960,122.7C1000,107,1040,117,1080,112C1120,107,1160,85,1200,106.7C1240,128,1280,192,1320,202.7C1360,213,1400,171,1420,149.3L1440,128L1440,320L1420,320C1400,320,1360,320,1320,320C1280,320,1240,320,1200,320C1160,320,1120,320,1080,320C1040,320,1000,320,960,320C920,320,880,320,840,320C800,320,760,320,720,320C680,320,640,320,600,320C560,320,520,320,480,320C440,320,400,320,360,320C320,320,280,320,240,320C200,320,160,320,120,320C80,320,40,320,20,320L0,320Z"
+				/>
+			</svg>
 			<Stack
-				direction={"row"}
-				justifyContent={"center"}
-				alignItems={"center"}
-				alignContent={"center"}
-				gap={1}
+				sx={{
+					background: theme.palette.primary.main,
+					width: "100%",
+					height: "5rem",
+					justifyContent: "flex-end",
+				}}
 			>
-				<Typography variant="caption">
-					© {new Date().getFullYear()} Grondin Kévin
-				</Typography>
-				<Typography variant="caption">Tous droits réservés</Typography>
-				<Link
-					variant="caption"
-					href="/mentions-legales"
-					sx={{
-						textDecoration: "none",
-						":hover": { textDecoration: "underline" },
-					}}
+				<Stack justifyContent={"center"} p={"3rem"}>
+					<Link
+						href="https://grondin-kevin.fr"
+						sx={{
+							textDecoration: "none",
+							color: theme.palette.secondary.dark,
+						}}
+					>
+						<Typography
+							variant="h6"
+							sx={{
+								":hover": { textDecoration: "underline" },
+								textAlign: "center",
+							}}
+						>
+							by Grondin Kévin
+						</Typography>
+					</Link>
+					<Stack direction={"row"} justifyContent={"center"} spacing={1}>
+						<Card sx={{ width: "3rem" }}>122</Card>
+					</Stack>
+				</Stack>
+
+				<Stack
+					direction={"row"}
+					justifyContent={"center"}
+					alignItems={"center"}
+					alignContent={"center"}
+					gap={1}
+					p={1}
+					color={theme.palette.secondary.dark}
 				>
-					<Typography sx={{ height: "100%" }} variant="caption">
-						Mentions légales
+					<Typography variant="caption" fontWeight={500}>
+						© {new Date().getFullYear()} Grondin Kévin
 					</Typography>
-				</Link>
+					<Typography variant="caption" fontWeight={500}>
+						Tous droits réservés
+					</Typography>
+					<Link
+						variant="caption"
+						href="/mentions"
+						sx={{
+							textDecoration: "none",
+							":hover": { textDecoration: "underline" },
+						}}
+					>
+						<Typography
+							sx={{
+								height: "100%",
+								fontWeight: 500,
+								color: theme.palette.secondary.dark,
+							}}
+							variant="caption"
+						>
+							Mentions légales
+						</Typography>
+					</Link>
+				</Stack>
 			</Stack>
 		</Stack>
 	);

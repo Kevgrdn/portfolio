@@ -28,14 +28,22 @@ export const HomeCompetences = () => {
 	}) => {
 		return (
 			<Grid item xs={12} md={6}>
-				<Stack alignItems={"flex-start"} sx={{ textAlign: "start" }}>
+				<Stack
+					alignItems={"flex-start"}
+					sx={{ textAlign: "start" }}
+					spacing={1}
+				>
 					<Stack direction={"row"} gap={1}>
 						{icon}
-						<Typography variant="subtitle1" fontWeight={700}>
+						<Typography
+							variant="subtitle1"
+							alignSelf={"center"}
+							fontWeight={700}
+						>
 							{title}
 						</Typography>
 					</Stack>
-					<Typography variant="subtitle2">{description}</Typography>
+					<Typography variant="body2">{description}</Typography>
 				</Stack>
 			</Grid>
 		);

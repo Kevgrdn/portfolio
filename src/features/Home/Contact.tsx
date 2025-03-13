@@ -51,7 +51,6 @@ export const HomeContact = () => {
 				p: 1,
 				flexGrow: 1,
 				height: "100%",
-				width: "50%",
 			}}
 		>
 			<CardHeader
