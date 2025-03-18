@@ -5,6 +5,8 @@ body,
 	padding: 0;
 	height: 100%;
 	width: 100%;
+	/* scrollbar-width: "0.5rem";
+	scrollbar-color: rgb(205, 178, 142) transparent; */
 }
 
 body {
@@ -12,4 +14,22 @@ body {
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 10px; /* Largeur de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+	background: transparent; /* Couleur du fond de la scrollbar */
+	border-radius: 10px; /* Arrondi du fond */
+}
+
+::-webkit-scrollbar-thumb {
+	background: #e2c49c; /* Couleur du curseur de la scrollbar */
+	border-radius: 10px; /* Arrondi du curseur */
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #b8a080; /* Changement de couleur au survol */
 }

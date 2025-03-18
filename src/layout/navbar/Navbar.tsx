@@ -63,6 +63,7 @@ export const Navbar = () => {
 	}));
 
 	const theme = useTheme();
+
 	return (
 		<AppBar
 			sx={{
@@ -70,7 +71,7 @@ export const Navbar = () => {
 				backgroundColor: theme.palette.background.default,
 				border: "none",
 				zIndex: 1,
-				boxShadow: window.scrollY > 10 ? "10px" : "none",
+				boxShadow: "1px white",
 				position: "sticky",
 			}}
 		>

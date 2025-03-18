@@ -5,10 +5,18 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "@fontsource/pacifico"; // Importe la police Pacifico
 
-import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { Navbar } from "./layout/navbar/Navbar";
-import { HomePageV2 } from "./pages/home/HomePageV2";
+import {
+	Box,
+	CssBaseline,
+	Stack,
+	ThemeProvider,
+	Typography,
+	createTheme,
+} from "@mui/material";
+import { MouseIcon } from "lucide-react";
+import { Outlet } from "react-router-dom";
 import { Footer } from "./layout/footer/Footer";
+import { Navbar } from "./layout/navbar/Navbar";
 export type language = "FR" | "EN";
 
 function App() {
@@ -41,7 +49,7 @@ function App() {
 			},
 			background: {
 				// PAPER = Bg des cards, dialog etc
-				paper: "rgb(244, 244, 244)",
+				paper: "rgb(37,37,37)",
 				// Default === bg par défaut de l'app
 				default:
 					// "linear-gradient(to bottom right, rgb(83, 140, 247), rgb(194, 45, 181))",
@@ -60,43 +68,11 @@ function App() {
 			},
 		},
 		components: {
-			// MuiCard: {
-			// 	styleOverrides: {
-			// 		root: {
-			// 			background: "rgba(255, 233, 233, 0.2)",
-			// 			borderRadius: "16px",
-			// 			boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-			// 			backdropFilter: "blur(5px)",
-			// 			webkitBackdropFilter: "blur(5px)",
-			// 			border: "1px solid rgba(255, 233, 233, 0.3)",
-			// 			padding: "2rem",
-			// 			":hover": {
-			// 				boxShadow: "0px 0px 8px 0px #FFFFFF",
-			// 			},
-			// 		},
-			// 	},
-			// },
 			MuiTypography: {
 				styleOverrides: {
 					root: {
 						lineHeight: 1,
 						textAlign: "left",
-					},
-				},
-			},
-			MuiStepIcon: {
-				styleOverrides: {
-					root: {
-						"&$active": {
-							fill: "white",
-							"& $text": {
-								fill: "#034691",
-							},
-						},
-					},
-					text: {
-						fill: "#D3D3D3",
-						display: "none",
 					},
 				},
 			},
@@ -108,41 +84,47 @@ function App() {
 			<CssBaseline />
 			<Box height={"100vh"} overflow={"auto"}>
 				<Navbar />
-				<HomePageV2 />
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
-				<span>1</span>
+
+				<Outlet />
 
 				<Footer />
+				<Stack
+					direction={"row"}
+					sx={{
+						bottom: "8%",
+						right: "15%",
+						transform: "rotate(-90deg)",
+						position: "absolute",
+						justifyContent: "center",
+						alignItems: "center",
+						animation: "verticalBounce 1s infinite",
+					}}
+					spacing={0.5}
+				>
+					<span
+						style={{
+							backgroundColor: theme.palette.secondary.main,
+							width: "3rem",
+							height: "2px",
+						}}
+					/>
+					<Typography
+						variant="caption"
+						sx={{
+							alignSelf: "center",
+							verticalAlign: "center",
+						}}
+						color={theme.palette.secondary.main}
+					>
+						Scroll down
+					</Typography>
+					<MouseIcon
+						color={theme.palette.secondary.main}
+						style={{
+							transform: "rotate(90deg)",
+						}}
+					/>
+				</Stack>
 			</Box>
 		</ThemeProvider>
 	);

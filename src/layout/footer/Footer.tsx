@@ -1,7 +1,58 @@
-import { Card, Link, Stack, Typography, useTheme } from "@mui/material";
+import {
+	Card,
+	Divider,
+	Link,
+	Stack,
+	Typography,
+	useTheme,
+} from "@mui/material";
+import { GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react";
+import type { FC } from "react";
+
+type SocialCardsProps = {
+	title: string;
+	icon: React.ReactElement;
+	link: string;
+};
 
 export const Footer = () => {
 	const theme = useTheme();
+
+	const SocialCards: FC<SocialCardsProps> = ({ icon, link, title }) => {
+		return (
+			<Card
+				sx={{
+					width: "2rem",
+					height: "2rem",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					boxShadow: `0 0 0.2rem ${theme.palette.secondary.dark}`,
+					bgcolor: theme.palette.secondary.dark,
+					":hover": {
+						cursor: "pointer",
+						boxShadow: `0 0 0.5rem ${theme.palette.secondary.dark}`,
+					},
+				}}
+				aria-label={title}
+			>
+				<Link
+					sx={{
+						m: 0,
+						p: 0,
+						alignContent: "center",
+						alignItems: "center",
+						justifyContent: "center",
+						display: "flex",
+					}}
+					href={link}
+					target="blank"
+				>
+					{icon}
+				</Link>
+			</Card>
+		);
+	};
 
 	return (
 		<Stack>
@@ -21,7 +72,7 @@ export const Footer = () => {
 					justifyContent: "flex-end",
 				}}
 			>
-				<Stack justifyContent={"center"} p={"3rem"}>
+				<Stack justifyContent={"center"} p={"2rem"} spacing={2}>
 					<Link
 						href="https://grondin-kevin.fr"
 						sx={{
@@ -40,7 +91,27 @@ export const Footer = () => {
 						</Typography>
 					</Link>
 					<Stack direction={"row"} justifyContent={"center"} spacing={1}>
-						<Card sx={{ width: "3rem" }}>122</Card>
+						<SocialCards
+							icon={<LinkedinIcon size={18} />}
+							link="https://www.linkedin.com/in/k%C3%A9vin-grondin-132848164/"
+							title="Linkedin"
+						/>
+						<SocialCards
+							icon={<GithubIcon size={18} />}
+							link="https://github.com/Kevgrdn"
+							title="Github"
+						/>
+						<Divider orientation="vertical" flexItem />
+						<SocialCards
+							icon={<MailIcon size={18} />}
+							link="mailto:grondin.kevin.webdev@gmail.com"
+							title="Mail"
+						/>
+						<SocialCards
+							icon={<PhoneIcon size={18} />}
+							link="tel:+33672611575"
+							title="Téléphone"
+						/>
 					</Stack>
 				</Stack>
 
