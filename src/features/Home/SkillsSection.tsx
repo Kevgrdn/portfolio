@@ -13,15 +13,8 @@ export const SkillsSection = () => {
 	const [tab, setTab] = useState<ETab>(ETab.FRONT);
 
 	return (
-		<Grid
-			container
-			item
-			xs={12}
-			marginX={{ xs: "5%", md: "15%", lg: "25%" }}
-			spacing={2}
-			id={"skills-section"}
-		>
-			<Grid item gridRow={6} xs={12}>
+		<>
+			<Grid item xs={12}>
 				<Stack justifyContent={"center"} alignItems={"center"} spacing={0.5}>
 					<Typography variant="h5" fontWeight={700} color={"secondary.main"}>
 						Mes compétences
@@ -37,6 +30,7 @@ export const SkillsSection = () => {
 					</Typography>
 				</Stack>
 			</Grid>
+
 			<Grid
 				item
 				xs={12}
@@ -66,6 +60,6 @@ export const SkillsSection = () => {
 				otherStack.map(({ icon, title }) => (
 					<SkillCard icon={icon} title={title} key={title} />
 				))}
-		</Grid>
+		</>
 	);
 };

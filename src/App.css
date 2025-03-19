@@ -29,3 +29,17 @@
 		transform: translateY(-0.25rem) rotate(-90deg); /* Déplace la flèche de 10px vers le haut */
 	}
 }
+
+@keyframes grow-shrink {
+	0% { 
+	  width: 0%; 
+	  /* transform: translateX(50%); */
+	}
+	50%{
+		width: 100%;
+	}
+	100% { 
+	  width: 0%; 
+	  /* transform: translateX(0); */
+	}
+  }

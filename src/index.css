@@ -7,15 +7,11 @@ body,
 	width: "100vh";
 }
 
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-}
+
 
 ::-webkit-scrollbar {
 	z-index: 3;
+	border-left: 1px solid #e2c49c;
 	width: "10px";
 } 
 

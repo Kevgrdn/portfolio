@@ -1,4 +1,5 @@
 import { Avatar, Stack, Typography, useTheme } from "@mui/material";
+import me from "../../assets/me.jpg";
 
 export const Description = () => {
 	const theme = useTheme();
@@ -12,7 +13,7 @@ export const Description = () => {
 		>
 			<Stack justifyContent={"center"} alignContent={"center"}>
 				<Avatar
-					src="/src/assets/me.jpg"
+					src={me}
 					sx={{
 						height: "13rem",
 						width: "13rem",

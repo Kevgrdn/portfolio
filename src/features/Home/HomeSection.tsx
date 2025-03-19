@@ -1,7 +1,15 @@
-import { Avatar, Button, Stack, Typography, useTheme } from "@mui/material";
+import {
+	Avatar,
+	Button,
+	Grid,
+	Stack,
+	Typography,
+	useTheme,
+} from "@mui/material";
 import { ArrowDownIcon, CloudDownloadIcon } from "lucide-react";
 import CV from "../../assets/files/CV.pdf";
 import me from "../../assets/me.jpg";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 export const HomeSection = () => {
 	const theme = useTheme();
@@ -13,78 +21,105 @@ export const HomeSection = () => {
 		link.click();
 	};
 
+	const isMobile = useIsMobile();
 	return (
-		<Stack
-			direction={{ xs: "column", md: "row" }}
-			spacing={6}
-			justifyContent={{ xs: "center", md: "flex-start" }}
-			alignItems={{ xs: "center", md: "flex-start" }}
-			mx={{ xs: 2, md: 0 }}
-		>
-			<Avatar
-				src={me}
-				sx={{
-					height: "20rem",
-					width: "20rem",
-					border: `5px solid ${theme.palette.secondary.main} `,
-				}}
-			/>
-			<Stack spacing={4}>
-				<Stack className="presentation-text" spacing={1}>
-					<Typography fontSize={96} py={1} fontWeight={700}>
-						Bienvenue,
-					</Typography>
-					<Stack spacing={0.5} alignItems={{ xs: "center", md: "flex-start" }}>
-						<Typography fontSize={32} fontWeight={500}>
-							Je suis Kévin Grondin
-						</Typography>
+		<Grid item xs={12}>
+			<Stack
+				direction={"row"}
+				alignItems={"center"}
+				justifyContent={"center"}
+				height={"100%"}
+				spacing={2}
+			>
+				{!isMobile && (
+					<Stack
+						flexGrow={1}
+						justifyContent={"center"}
+						alignItems={{ xs: "center", md: "flex-end" }}
+					>
+						<Avatar
+							src={me}
+							sx={{
+								height: "30vh",
+								width: "30vh",
+								border: `5px solid ${theme.palette.secondary.main} `,
+							}}
+						/>
+					</Stack>
+				)}
+				<Stack
+					flexGrow={2}
+					spacing={4}
+					alignItems={{ xs: "center", lg: "flex-start" }}
+					justifyContent={"center"}
+				>
+					<Stack className="presentation-text" spacing={1}>
 						<Typography
-							fontSize={48}
-							color={theme.palette.secondary.main}
+							textAlign={{ xs: "center", md: "start" }}
+							fontSize={{ xs: 50, sm: 96 }}
+							py={1}
 							fontWeight={700}
 						>
-							Développeur Fullstack
+							Bienvenue,
 						</Typography>
+						<Stack
+							spacing={0.5}
+							textAlign={{ xs: "center", md: "start" }}
+							alignItems={{ xs: "center", lg: "flex-start" }}
+						>
+							<Typography fontSize={{ xs: 20, sm: 32 }} fontWeight={500}>
+								Je suis Kévin Grondin
+							</Typography>
+							<Typography
+								textAlign={{ xs: "center", md: "start" }}
+								fontSize={{ xs: 30, sm: 48, md: 45 }}
+								color={theme.palette.secondary.main}
+								fontWeight={700}
+							>
+								Développeur Fullstack
+							</Typography>
+						</Stack>
+					</Stack>
+					<Stack
+						className="presentation-buttons"
+						direction={{ xs: "column", sm: "row" }}
+						justifyContent={{ xs: "center", lg: "flex-start" }}
+						width={{ xs: 1, sm: "auto" }}
+						spacing={1}
+					>
+						<Button
+							onClick={() => {
+								const section = document.getElementById("about-section");
+								if (section) {
+									section.scrollIntoView({ behavior: "smooth" });
+								}
+							}}
+							variant="outlined"
+							sx={{ borderRadius: "0.5rem" }}
+							startIcon={
+								<ArrowDownIcon
+									size={18}
+									style={{ animation: "bounce 1s infinite" }}
+								/>
+							}
+						>
+							A propos
+						</Button>
+						<Button
+							startIcon={<CloudDownloadIcon size={18} />}
+							sx={{
+								border: `1px solid ${theme.palette.secondary.main}`,
+								borderRadius: "0.5rem",
+								color: theme.palette.secondary.main,
+								// backgroundColor: theme.palette.secondary.main,
+							}}
+							onClick={() => handleDownload()}
+						>
+							Télécharger le CV
+						</Button>
 					</Stack>
 				</Stack>
-				<Stack
-					className="presentation-buttons"
-					direction={"row"}
-					justifyContent={{ xs: "center", md: "flex-start" }}
-					spacing={1}
-				>
-					<Button
-						onClick={() => {
-							const section = document.getElementById("about-section");
-							if (section) {
-								section.scrollIntoView({ behavior: "smooth" });
-							}
-						}}
-						variant="outlined"
-						sx={{ borderRadius: "0.5rem" }}
-						startIcon={
-							<ArrowDownIcon
-								size={18}
-								style={{ animation: "bounce 1s infinite" }}
-							/>
-						}
-					>
-						A propos
-					</Button>
-					<Button
-						startIcon={<CloudDownloadIcon size={18} />}
-						sx={{
-							border: `1px solid ${theme.palette.secondary.main}`,
-							borderRadius: "0.5rem",
-							color: theme.palette.secondary.main,
-							// backgroundColor: theme.palette.secondary.main,
-						}}
-						onClick={() => handleDownload()}
-					>
-						Télécharger le CV
-					</Button>
-				</Stack>
 			</Stack>
-		</Stack>
+		</Grid>
 	);
 };

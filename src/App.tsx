@@ -5,13 +5,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "@fontsource/pacifico"; // Importe la police Pacifico
 
-import {
-	Box,
-	Container,
-	CssBaseline,
-	ThemeProvider,
-	createTheme,
-} from "@mui/material";
+import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import { Footer } from "./layout/footer/Footer";
 import { Navbar } from "./layout/navbar/Navbar";
@@ -71,7 +65,7 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Box height={"100vh"} overflow={"auto"}>
+			<Box height={"100vh"} width={"100vw"} overflow={"auto"}>
 				<Navbar />
 
 				<Outlet />

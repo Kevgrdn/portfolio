@@ -17,7 +17,7 @@ export const About = () => {
 	return (
 		<Grid
 			container
-			paddingX={{ xs: "5%", md: "15%", lg: "25%" }}
+			paddingX={{ xs: "5%", md: "15%", lg: "20%" }}
 			mt={"5vh"}
 			spacing={2}
 		>

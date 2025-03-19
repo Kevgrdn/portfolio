@@ -3,6 +3,7 @@ import {
 	CardContent,
 	CardHeader,
 	Divider,
+	Grid,
 	Link,
 	Stack,
 	Typography,
@@ -11,6 +12,7 @@ import {
 	CircleUserIcon,
 	MailIcon,
 	MapPinIcon,
+	PhoneIcon,
 	ServerIcon,
 	TriangleAlertIcon,
 } from "lucide-react";
@@ -22,7 +24,7 @@ export const MentionsLegales = () => {
 		subheader,
 	}: { icon: React.ReactElement; title: string; subheader?: string }) => {
 		return (
-			<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
+			<Stack direction={"row"} spacing={1} alignItems={"center"}>
 				<Stack
 					sx={{
 						background:
@@ -48,99 +50,142 @@ export const MentionsLegales = () => {
 	};
 
 	return (
-		<Stack width={1} height={1} justifyContent={"center"} alignItems={"center"}>
-			<Card sx={{ width: "50%" }}>
-				<CardHeader
-					title="Mentions Légales"
-					titleTypographyProps={{ variant: "h5", fontWeight: "bold", p: 1 }}
-					subheader="Informations légales et conditions d'utilisation"
-					subheaderTypographyProps={{
-						variant: "subtitle1",
-					}}
-				/>
+		<Grid
+			container
+			paddingX={{ xs: "5%", md: "15%", lg: "25%" }}
+			mt={"5vh"}
+			spacing={2}
+		>
+			<Grid item xs={12}>
+				<Card>
+					<CardHeader
+						title="Mentions Légales"
+						titleTypographyProps={{ variant: "h5", fontWeight: "bold", p: 1 }}
+						subheader="Informations légales et conditions d'utilisation"
+						subheaderTypographyProps={{
+							variant: "subtitle1",
+						}}
+					/>
 
-				<CardContent sx={{ display: "flex", justifyContent: "flex-start" }}>
-					<Stack spacing={3} width={"100%"}>
-						<Stack spacing={1}>
-							<Title
-								icon={<CircleUserIcon />}
-								title="Propriétaire du site"
-								subheader="Informations relatives au propriétaire"
-							/>
-							<Stack sx={{ alignItems: "flex-start" }} spacing={0.5}>
-								<Typography variant="body2">Grondin Kévin</Typography>
+					<CardContent sx={{ display: "flex", justifyContent: "flex-start" }}>
+						<Stack spacing={3}>
+							<Stack spacing={2}>
+								<Title
+									icon={<CircleUserIcon size={18} />}
+									title="Propriétaire du site"
+									subheader="Informations relatives au propriétaire"
+								/>
+								<Stack sx={{ alignItems: "flex-start" }} spacing={0.5}>
+									<Typography variant="body2">Grondin Kévin</Typography>
 
-								<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
-									<MapPinIcon size={14} />
-									<Typography variant="body2">
-										231 rue auguste chevallier, 37000 Tours
-									</Typography>
-								</Stack>
-								<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
-									<MailIcon size={14} />
-									<Link
-										variant="body2"
-										underline="hover"
-										sx={{
-											":hover": {
-												cursor: "pointer",
-											},
-										}}
-									>
-										contact@grondin-kevin.fr
-									</Link>
+									<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
+										<MapPinIcon size={14} />
+										<Typography variant="body2">
+											231 rue auguste chevallier, 37000 Tours
+										</Typography>
+									</Stack>
+									<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
+										<MailIcon size={14} />
+										<Link
+											variant="body2"
+											underline="hover"
+											sx={{
+												":hover": {
+													cursor: "pointer",
+												},
+											}}
+										>
+											contact@grondin-kevin.fr
+										</Link>
+									</Stack>
 								</Stack>
 							</Stack>
-						</Stack>
-						<Divider sx={{ backgroundColor: "white" }} />
-						<Stack spacing={1}>
-							<Title
-								icon={<ServerIcon />}
-								title="Hébergeur"
-								subheader="Informations relatives à l'hébergeur"
-							/>
-							<Stack sx={{ alignItems: "flex-start" }} spacing={0.5}>
-								<Typography variant="body2">
-									HOSTINGER operations, UAB
+							<Divider sx={{ backgroundColor: "white" }} />
+							<Stack spacing={2}>
+								<Title
+									icon={<ServerIcon size={18} />}
+									title="Hébergeur"
+									subheader="Informations relatives à l'hébergeur"
+								/>
+								<Stack sx={{ alignItems: "flex-start" }} spacing={0.5}>
+									<Typography variant="body2">
+										HOSTINGER operations, UAB
+									</Typography>
+
+									<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
+										<MapPinIcon size={14} />
+										<Typography variant="body2">
+											Švitrigailos str. 34, Vilnius 03230 Lithuania
+										</Typography>
+									</Stack>
+									<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
+										<MailIcon size={14} />
+										<Link
+											variant="body2"
+											underline="hover"
+											sx={{
+												":hover": {
+													cursor: "pointer",
+												},
+											}}
+										>
+											https://www.hostinger.fr/
+										</Link>
+									</Stack>
+								</Stack>
+							</Stack>
+							<Divider sx={{ backgroundColor: "white" }} />
+							<Stack spacing={2}>
+								<Title
+									icon={<TriangleAlertIcon size={18} />}
+									title="Responsabilité juridique"
+								/>
+								<Typography variant="body2" sx={{ textAlign: "justify" }}>
+									Le propriétaire du site ne peut être tenu responsable des
+									dommages directs ou indirects causés au matériel de
+									l'utilisateur lors de l'accès au site.
 								</Typography>
-
-								<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
-									<MapPinIcon size={14} />
-									<Typography variant="body2">
-										Švitrigailos str. 34, Vilnius 03230 Lithuania
-									</Typography>
-								</Stack>
-								<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
-									<MailIcon size={14} />
-									<Link
-										variant="body2"
-										underline="hover"
-										sx={{
-											":hover": {
-												cursor: "pointer",
-											},
-										}}
-									>
-										https://www.hostinger.fr/
-									</Link>
+							</Stack>
+							<Divider sx={{ backgroundColor: "white" }} />
+							<Stack spacing={2}>
+								<Title icon={<PhoneIcon size={18} />} title="Me contacter" />
+								<Stack spacing={1}>
+									<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
+										<MailIcon size={14} />
+										<Link
+											variant="body2"
+											underline="hover"
+											href="mailto:contact@grondin-kevin.fr"
+											sx={{
+												":hover": {
+													cursor: "pointer",
+												},
+											}}
+										>
+											contact@grondin-kevin.fr
+										</Link>
+									</Stack>
+									<Stack direction={"row"} spacing={0.5} alignItems={"center"}>
+										<PhoneIcon size={14} />
+										<Link
+											variant="body2"
+											underline="hover"
+											href="tel:+33672611575"
+											sx={{
+												":hover": {
+													cursor: "pointer",
+												},
+											}}
+										>
+											0672611575
+										</Link>
+									</Stack>
 								</Stack>
 							</Stack>
 						</Stack>
-						<Divider sx={{ backgroundColor: "white" }} />
-						<Stack spacing={1}>
-							<Title
-								icon={<TriangleAlertIcon />}
-								title="Responsabilité juridique"
-							/>
-							<Typography variant="body2" sx={{ textAlign: "justify" }}>
-								Le propriétaire du site ne peut être tenu responsable des
-								dommages directs ou indirects causés au matériel de
-								l'utilisateur lors de l'accès au site.
-							</Typography>
-						</Stack>
-					</Stack>
-				</CardContent>
-			</Card>
-		</Stack>
+					</CardContent>
+				</Card>
+			</Grid>
+		</Grid>
 	);
 };

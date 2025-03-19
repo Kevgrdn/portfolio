@@ -57,7 +57,7 @@ export const Footer = () => {
 	return (
 		<Stack>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-				<title>Wave</title>
+				<title>{""}</title>
 				<path
 					fill="#FFFFFF"
 					fillOpacity="1"
@@ -68,7 +68,7 @@ export const Footer = () => {
 				sx={{
 					background: theme.palette.primary.main,
 					width: "100%",
-					height: "5rem",
+
 					justifyContent: "flex-end",
 				}}
 			>
@@ -116,7 +116,7 @@ export const Footer = () => {
 				</Stack>
 
 				<Stack
-					direction={"row"}
+					direction={{ xs: "column", md: "row" }}
 					justifyContent={"center"}
 					alignItems={"center"}
 					alignContent={"center"}
@@ -135,19 +135,13 @@ export const Footer = () => {
 						href="/mentions"
 						sx={{
 							textDecoration: "none",
+							height: "100%",
+							fontWeight: 500,
+							color: theme.palette.secondary.dark,
 							":hover": { textDecoration: "underline" },
 						}}
 					>
-						<Typography
-							sx={{
-								height: "100%",
-								fontWeight: 500,
-								color: theme.palette.secondary.dark,
-							}}
-							variant="caption"
-						>
-							Mentions légales
-						</Typography>
+						Mentions légales
 					</Link>
 				</Stack>
 			</Stack>
