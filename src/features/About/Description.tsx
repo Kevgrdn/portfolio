@@ -7,6 +7,7 @@ export const Description = () => {
 		<Stack
 			direction={{ xs: "column", md: "row" }}
 			justifyContent={{ xs: "center" }}
+			alignItems={{ xs: "center" }}
 			spacing={2}
 		>
 			<Stack justifyContent={"center"} alignContent={"center"}>
@@ -20,11 +21,8 @@ export const Description = () => {
 				/>
 			</Stack>
 			<Stack spacing={2}>
-				<Stack spacing={0.5}>
-					<Typography
-						variant="h4"
-						sx={{ fontWeight: "600", alignSelf: "self-start" }}
-					>
+				<Stack spacing={0.5} alignItems={{ xs: "center", md: "flex-start" }}>
+					<Typography variant="h4" sx={{ fontWeight: "600" }}>
 						Kévin Grondin,
 					</Typography>
 					<Stack direction={"row"} spacing={1}>
@@ -32,7 +30,6 @@ export const Description = () => {
 							variant="h5"
 							sx={{
 								overflow: "hidden",
-								alignSelf: "self-start",
 							}}
 							color={theme.palette.secondary.main}
 							fontWeight={600}
@@ -70,13 +67,13 @@ export const Description = () => {
 				</Stack>
 				<Typography
 					variant="body2"
+					textAlign={{ xs: "center", md: "justify" }}
 					sx={{
 						fontWeight: "400",
 						textAlign: "start",
 						lineHeight: "1rem",
 						maxWidth: "30rem",
 					}}
-					textAlign={"justify"}
 				>
 					Passionné par le développement web et les nouvelles technologies, je
 					conçois et développe des applications web modernes et performantes.

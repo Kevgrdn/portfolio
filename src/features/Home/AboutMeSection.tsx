@@ -1,17 +1,28 @@
 import {
 	Box,
-	Button,
 	Card,
+	CardActionArea,
 	Grid,
 	Stack,
 	Typography,
 	useTheme,
 } from "@mui/material";
-import { HeartIcon, PaletteIcon, RocketIcon } from "lucide-react";
+import {
+	CheckIcon,
+	HeartIcon,
+	MailIcon,
+	PaletteIcon,
+	PhoneIcon,
+	RocketIcon,
+} from "lucide-react";
 import meFullSize from "../../assets/me_full.jpg";
+import { useState } from "react";
 
 export const AboutMeSection = () => {
 	const theme = useTheme();
+
+	const [copiedMail, setCopiedMail] = useState(false);
+	const [copiedPhone, setCopiedPhone] = useState(false);
 
 	return (
 		<Grid
@@ -311,20 +322,134 @@ export const AboutMeSection = () => {
 								.
 							</Typography>
 						</Stack>
+						<Stack spacing={1}>
+							<Card>
+								<CardActionArea
+									onClick={() => {
+										navigator.clipboard.writeText(
+											"grondin.kevin.webdev@gmail.com",
+										);
+										setCopiedMail(true);
 
-						<Button
-							sx={{
-								alignSelf: "flex-start",
-								fontSize: "0.7rem",
-								fontWeight: "bold",
-								":hover": {
-									color: theme.palette.secondary.main,
-								},
-							}}
-							variant="outlined"
-						>
-							Me contacter
-						</Button>
+										setTimeout(() => {
+											setCopiedMail(false);
+										}, 3000);
+									}}
+									sx={{ p: 1 }}
+								>
+									<Stack
+										direction={"row"}
+										justifyContent={"center"}
+										alignItems={"center"}
+										spacing={1}
+										sx={{ height: "20px", position: "relative" }}
+									>
+										<Box
+											sx={{
+												position: "absolute",
+												opacity: copiedMail ? 1 : 0,
+												transform: copiedMail
+													? "translateY(0)"
+													: "translateY(10px)",
+												transition:
+													"opacity 0.4s ease-in-out, transform 0.4s ease-in-out",
+												display: "flex",
+												justifyContent: "center",
+												alignItems: "center",
+												gap: "8px",
+											}}
+										>
+											<CheckIcon color="green" size={16} />
+											<Typography variant="caption">
+												Copié dans le presse papier
+											</Typography>
+										</Box>
+
+										<Box
+											sx={{
+												opacity: copiedMail ? 0 : 1,
+												transform: copiedMail
+													? "translateY(-10px)"
+													: "translateY(0)",
+												transition:
+													"opacity 0.4s ease-in-out, transform 0.4s ease-in-out",
+												display: "flex",
+												justifyContent: "center",
+
+												alignItems: "center",
+												gap: "8px",
+											}}
+										>
+											<MailIcon size={16} />
+											<Typography variant="caption">
+												grondin.kevin.webdev@gmail.com
+											</Typography>
+										</Box>
+									</Stack>
+								</CardActionArea>
+							</Card>
+							<Card>
+								<CardActionArea
+									onClick={() => {
+										navigator.clipboard.writeText("0672611575");
+										setCopiedPhone(true);
+
+										setTimeout(() => {
+											setCopiedPhone(false);
+										}, 3000);
+									}}
+									sx={{ p: 1 }}
+								>
+									<Stack
+										direction={"row"}
+										justifyContent={"center"}
+										alignItems={"center"}
+										spacing={1}
+										sx={{ height: "20px", position: "relative" }}
+									>
+										<Box
+											sx={{
+												position: "absolute",
+												opacity: copiedPhone ? 1 : 0,
+												transform: copiedPhone
+													? "translateY(0)"
+													: "translateY(10px)",
+												transition:
+													"opacity 0.4s ease-in-out, transform 0.4s ease-in-out",
+												display: "flex",
+												justifyContent: "center",
+												alignItems: "center",
+												gap: "8px",
+											}}
+										>
+											<CheckIcon color="green" size={16} />
+											<Typography variant="caption">
+												Copié dans le presse papier
+											</Typography>
+										</Box>
+
+										<Box
+											sx={{
+												opacity: copiedPhone ? 0 : 1,
+												transform: copiedPhone
+													? "translateY(-10px)"
+													: "translateY(0)",
+												transition:
+													"opacity 0.4s ease-in-out, transform 0.4s ease-in-out",
+												display: "flex",
+												justifyContent: "center",
+
+												alignItems: "center",
+												gap: "8px",
+											}}
+										>
+											<PhoneIcon size={16} />
+											<Typography variant="caption">0672611575</Typography>
+										</Box>
+									</Stack>
+								</CardActionArea>
+							</Card>
+						</Stack>
 					</Stack>
 				</Stack>
 			</Grid>

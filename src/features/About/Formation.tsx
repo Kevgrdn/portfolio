@@ -171,7 +171,7 @@ export const Formation = () => {
 				<FormationCard
 					title="Openclassrooms"
 					diplomaLevel="BAC +2"
-					subtitle="Mars 2023 - Avril 2024"
+					subtitle="Mars 2021 - Novembre 2021"
 					location="Paris (75)"
 					description={
 						<Stack spacing={2}>

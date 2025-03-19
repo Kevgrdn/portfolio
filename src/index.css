@@ -3,10 +3,8 @@ body,
 #root {
 	margin: 0;
 	padding: 0;
-	height: 100%;
-	width: 100%;
-	/* scrollbar-width: "0.5rem";
-	scrollbar-color: rgb(205, 178, 142) transparent; */
+	height: "100vh" ;
+	width: "100vh";
 }
 
 body {
@@ -17,8 +15,9 @@ body {
 }
 
 ::-webkit-scrollbar {
-	width: 10px; /* Largeur de la scrollbar */
-}
+	z-index: 3;
+	width: "10px";
+} 
 
 ::-webkit-scrollbar-track {
 	background: transparent; /* Couleur du fond de la scrollbar */

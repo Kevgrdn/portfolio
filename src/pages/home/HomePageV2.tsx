@@ -1,8 +1,9 @@
 import { Grid } from "@mui/material";
-
 import { AboutMeSection } from "../../features/Home/AboutMeSection";
 import { HomeSection } from "../../features/Home/HomeSection";
 import { SkillsSection } from "../../features/Home/SkillsSection";
+import { BouncingMouse } from "../../components/ui/BouncingMouse";
+
 export const HomePageV2 = () => {
 	return (
 		<Grid container spacing={6}>
@@ -19,6 +20,8 @@ export const HomePageV2 = () => {
 			</Grid>
 			<AboutMeSection />
 			<SkillsSection />
+
+			<BouncingMouse />
 		</Grid>
 	);
 };

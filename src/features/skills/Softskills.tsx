@@ -1,11 +1,28 @@
-import { Stack, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
+import { softskill } from "../../data/Softskills";
+import { SkillCard } from "../../components/Skillcard";
 
 export const Softskills = () => {
 	return (
-		<Stack justifyContent={"center"} alignItems={"center"} spacing={0.5}>
-			<Typography variant="h5" fontWeight={700} color={"secondary.main"}>
-				Mes softskills
-			</Typography>
-		</Stack>
+		<>
+			<Grid item xs={12}>
+				<Stack justifyContent={"center"} alignItems={"center"} spacing={0.5}>
+					<Typography variant="h5" fontWeight={700} color={"secondary.main"}>
+						Mes softskills
+					</Typography>
+					<Typography
+						variant="caption"
+						fontWeight={400}
+						textAlign={"center"}
+						maxWidth={"25rem"}
+					>
+						Attributs personnels
+					</Typography>
+				</Stack>
+			</Grid>
+			{softskill.map(({ icon, title }) => (
+				<SkillCard icon={icon} title={title} key={title} />
+			))}
+		</>
 	);
 };

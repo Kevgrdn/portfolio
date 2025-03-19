@@ -2,6 +2,8 @@ import { Grid, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 import { Description } from "../../features/About/Description";
 import { Formation } from "../../features/About/Formation";
+import { Experience } from "../../features/About/Experience";
+import { AreaOfInterest } from "../../features/About/AreaOfInterest";
 
 enum EMode {
 	FORMATION = "FORMATION",
@@ -40,14 +42,10 @@ export const About = () => {
 			)}
 			{mode === EMode.EXPERIENCE && (
 				<Grid item xs={12}>
-					EXPERIENCE
+					<Experience />
 				</Grid>
 			)}
-			{mode === EMode.CENTRES_D_INTERET && (
-				<Grid item xs={12}>
-					CENTRES_D_INTERET
-				</Grid>
-			)}
+			{mode === EMode.CENTRES_D_INTERET && <AreaOfInterest />}
 		</Grid>
 	);
 };
