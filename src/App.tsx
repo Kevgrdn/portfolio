@@ -6,9 +6,11 @@ import "@fontsource/roboto/700.css";
 import "@fontsource/pacifico"; // Importe la police Pacifico
 
 import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Footer } from "./layout/footer/Footer";
 import { Navbar } from "./layout/navbar/Navbar";
+import { useEffect, useState } from "react";
+import { BouncingMouse } from "./components/ui/BouncingMouse";
 export type language = "FR" | "EN";
 
 function App() {
@@ -62,15 +64,34 @@ function App() {
 		},
 	});
 
+	const location = useLocation();
+	const [fade, setFade] = useState(false);
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	useEffect(() => {
+		setFade(false);
+		const timer = setTimeout(() => setFade(true), 50); // Petit délai pour l'effet
+		return () => clearTimeout(timer);
+	}, [location.pathname]);
+
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Box height={"100vh"} width={"100vw"} overflow={"auto"}>
+			<Box className="" height={"100vh"} width={"100vw"} overflow={"auto"}>
 				<Navbar />
-
-				<Outlet />
+				<Box
+					className="data"
+					sx={{
+						opacity: fade ? 1 : 0,
+						transform: fade ? "translateY(0)" : "translateY(10px)",
+						transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+					}}
+				>
+					<Outlet />
+				</Box>
 
 				<Footer />
+				<BouncingMouse />
 			</Box>
 		</ThemeProvider>
 	);

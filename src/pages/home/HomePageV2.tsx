@@ -1,15 +1,14 @@
 import { Grid, Stack } from "@mui/material";
-import { AboutMeSection } from "../../features/Home/about/AboutMeSection";
 import { HomeSection } from "../../features/Home/HomeSection";
 import { SkillsSection } from "../../features/Home/SkillsSection";
-import { BouncingMouse } from "../../components/ui/BouncingMouse";
+import { AboutMeSection } from "../../features/Home/about/AboutMeSection";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
 export const HomePageV2 = () => {
 	const isMobile = useIsMobile();
 
 	return (
-		<Stack marginX={{ xs: "5%", md: "15%", lg: "20%" }}>
+		<Stack marginX={{ xs: "5%", md: "15%", lg: "20%" }} position={"relative"}>
 			<Grid container height={"100vh"}>
 				<HomeSection />
 			</Grid>
@@ -26,7 +25,6 @@ export const HomePageV2 = () => {
 			<Grid container spacing={2} id={"skills-section"}>
 				<SkillsSection />
 			</Grid>
-			{!isMobile && <BouncingMouse />}
 		</Stack>
 	);
 };

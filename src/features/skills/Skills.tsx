@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { backStack, frontStack, otherStack } from "../../data/Stack";
-import { SkillCard } from "../../components/Skillcard";
 import { Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
+import { useState } from "react";
+import { SkillCard } from "../../components/Skillcard";
+import { backStack, frontStack, otherStack } from "../../data/Stack";
 
 export const Skills = () => {
 	enum ETab {

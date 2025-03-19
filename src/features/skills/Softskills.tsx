@@ -1,6 +1,6 @@
 import { Grid, Stack, Typography } from "@mui/material";
-import { softskill } from "../../data/Softskills";
 import { SkillCard } from "../../components/Skillcard";
+import { softskill } from "../../data/Softskills";
 
 export const Softskills = () => {
 	return (

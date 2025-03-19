@@ -1,7 +1,7 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import { MouseIcon } from "lucide-react";
 
-export const BouncingMouse = () => {
+export const BouncingMouse = ({ text }: { text?: string }) => {
 	const theme = useTheme();
 
 	return (
@@ -11,7 +11,7 @@ export const BouncingMouse = () => {
 				bottom: "8%",
 				right: "15%",
 				transform: "rotate(-90deg)",
-				position: "absolute",
+				position: "fixed",
 				justifyContent: "center",
 				alignItems: "center",
 				animation: "verticalBounce 1s infinite",
@@ -33,7 +33,7 @@ export const BouncingMouse = () => {
 				}}
 				color={theme.palette.secondary.main}
 			>
-				Scroll down
+				{text ? text : "Scroll down"}
 			</Typography>
 			<MouseIcon
 				color={theme.palette.secondary.main}

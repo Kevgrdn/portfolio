@@ -3,17 +3,15 @@ body,
 #root {
 	margin: 0;
 	padding: 0;
-	height: "100vh" ;
+	height: "100vh";
 	width: "100vh";
 }
-
-
 
 ::-webkit-scrollbar {
 	z-index: 3;
 	border-left: 1px solid #e2c49c;
 	width: "10px";
-} 
+}
 
 ::-webkit-scrollbar-track {
 	background: transparent; /* Couleur du fond de la scrollbar */

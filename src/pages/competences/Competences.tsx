@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
-import { Softskills } from "../../features/skills/Softskills";
 import { Skills } from "../../features/skills/Skills";
+import { Softskills } from "../../features/skills/Softskills";
 
 export const Competences = () => {
 	return (

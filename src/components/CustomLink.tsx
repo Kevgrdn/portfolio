@@ -1,5 +1,5 @@
 import { Link, Stack, useTheme } from "@mui/material";
-import { useState, type FC } from "react";
+import { type FC, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 type CustomLinkProps = {

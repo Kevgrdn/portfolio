@@ -17,6 +17,8 @@ export const AreaOfInterest = () => {
 					borderRadius: "0.5rem",
 					boxShadow: `1px 1px 1px 1px solid ${theme.palette.background.paper} `,
 					alignItems: "center",
+					animation: "fadeIn 0.5s ease-out",
+
 					transition: "transform 0.3s ease, box-shadow 0.3s ease",
 
 					"&:hover": {

@@ -1,9 +1,9 @@
 import { Grid, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
-import { Description } from "../../features/About/Description";
-import { Formation } from "../../features/About/Formation";
-import { Experience } from "../../features/About/Experience";
 import { AreaOfInterest } from "../../features/About/AreaOfInterest";
+import { Description } from "../../features/About/Description";
+import { Experience } from "../../features/About/Experience";
+import { Formation } from "../../features/About/Formation";
 
 enum EMode {
 	FORMATION = "FORMATION",

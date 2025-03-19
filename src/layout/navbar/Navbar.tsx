@@ -14,7 +14,6 @@ import {
 } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { CustomLink } from "../../components/CustomLink";
 import {
 	CheckIcon,
 	HandshakeIcon,
@@ -25,6 +24,7 @@ import {
 	UserSearchIcon,
 } from "lucide-react";
 import { useState } from "react";
+import { CustomLink } from "../../components/CustomLink";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
 export const Navbar = () => {

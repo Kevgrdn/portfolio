@@ -1,6 +1,5 @@
 import { Description } from "@mui/icons-material";
-import { Grid, Tabs } from "@mui/material";
-import React from "react";
+import { Grid } from "@mui/material";
 
 export const Legal = () => {
 	return (

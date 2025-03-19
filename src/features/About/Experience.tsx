@@ -10,24 +10,24 @@ import {
 } from "@mui/material";
 import { BriefcaseBusinessIcon, MapPinIcon } from "lucide-react";
 import type { FC } from "react";
+import css from "../../assets/stackIcons/css.svg";
+import eslint from "../../assets/stackIcons/eslint.svg";
 import express from "../../assets/stackIcons/express.svg";
-import js from "../../assets/stackIcons/js.svg";
-import ts from "../../assets/stackIcons/ts.svg";
-import react from "../../assets/stackIcons/react.svg";
-import node from "../../assets/stackIcons/node.svg";
-import npm from "../../assets/stackIcons/npm.svg";
-import mongo from "../../assets/stackIcons/mongo.svg";
 import git from "../../assets/stackIcons/git.svg";
 import gitlab from "../../assets/stackIcons/gitlab.svg";
-import vite from "../../assets/stackIcons/vite.svg";
-import nest from "../../assets/stackIcons/nest.svg";
-import pg from "../../assets/stackIcons/pg.svg";
-import vitest from "../../assets/stackIcons/vitest.svg";
-import jest from "../../assets/stackIcons/jest.svg";
-import prettier from "../../assets/stackIcons/prettier.svg";
-import eslint from "../../assets/stackIcons/eslint.svg";
 import html from "../../assets/stackIcons/html.svg";
-import css from "../../assets/stackIcons/css.svg";
+import jest from "../../assets/stackIcons/jest.svg";
+import js from "../../assets/stackIcons/js.svg";
+import mongo from "../../assets/stackIcons/mongo.svg";
+import nest from "../../assets/stackIcons/nest.svg";
+import node from "../../assets/stackIcons/node.svg";
+import npm from "../../assets/stackIcons/npm.svg";
+import pg from "../../assets/stackIcons/pg.svg";
+import prettier from "../../assets/stackIcons/prettier.svg";
+import react from "../../assets/stackIcons/react.svg";
+import ts from "../../assets/stackIcons/ts.svg";
+import vite from "../../assets/stackIcons/vite.svg";
+import vitest from "../../assets/stackIcons/vitest.svg";
 
 export const Experience = () => {
 	const theme = useTheme();

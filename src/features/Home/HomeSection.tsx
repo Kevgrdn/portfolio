@@ -30,6 +30,7 @@ export const HomeSection = () => {
 				justifyContent={"center"}
 				height={"100%"}
 				spacing={2}
+				position={"relative"}
 			>
 				{!isMobile && (
 					<Stack
