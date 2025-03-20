@@ -10,9 +10,9 @@ export const AboutMeSection = () => {
 					<Typography variant="h5" fontWeight={700} color={"secondary.main"}>
 						A propos de moi
 					</Typography>
-					<Typography variant="caption" fontWeight={500} textAlign={"center"}>
-						Qui suis-je ?
-					</Typography>
+					{/* <Typography variant="caption" fontWeight={500} textAlign={"center"}>
+						Kévin GRONDIN
+					</Typography> */}
 				</Stack>
 			</Grid>
 			<Grid item xs={12} md={6}>

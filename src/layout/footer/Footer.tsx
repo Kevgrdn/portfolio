@@ -68,7 +68,6 @@ export const Footer = () => {
 				sx={{
 					background: theme.palette.primary.main,
 					width: "100%",
-
 					justifyContent: "flex-end",
 				}}
 			>
@@ -87,7 +86,7 @@ export const Footer = () => {
 								textAlign: "center",
 							}}
 						>
-							by Grondin Kévin
+							by Kévin
 						</Typography>
 					</Link>
 					<Stack direction={"row"} justifyContent={"center"} spacing={1}>
@@ -125,7 +124,7 @@ export const Footer = () => {
 					color={theme.palette.secondary.dark}
 				>
 					<Typography variant="caption" fontWeight={500}>
-						© {new Date().getFullYear()} Grondin Kévin
+						© {new Date().getFullYear()} Kévin GRONDIN
 					</Typography>
 					<Typography variant="caption" fontWeight={500}>
 						Tous droits réservés

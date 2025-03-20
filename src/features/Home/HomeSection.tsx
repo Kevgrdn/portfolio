@@ -54,6 +54,16 @@ export const HomeSection = () => {
 					alignItems={{ xs: "center", lg: "flex-start" }}
 					justifyContent={"center"}
 				>
+					{isMobile && (
+						<Avatar
+							src={me}
+							sx={{
+								height: "30vh",
+								width: "30vh",
+								border: `5px solid ${theme.palette.secondary.main} `,
+							}}
+						/>
+					)}
 					<Stack className="presentation-text" spacing={1}>
 						<Typography
 							textAlign={{ xs: "center", md: "start" }}
@@ -112,7 +122,6 @@ export const HomeSection = () => {
 								border: `1px solid ${theme.palette.secondary.main}`,
 								borderRadius: "0.5rem",
 								color: theme.palette.secondary.main,
-								// backgroundColor: theme.palette.secondary.main,
 							}}
 							onClick={() => handleDownload()}
 						>

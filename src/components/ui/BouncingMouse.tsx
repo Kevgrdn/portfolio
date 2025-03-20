@@ -9,7 +9,8 @@ export const BouncingMouse = ({ text }: { text?: string }) => {
 			direction={"row"}
 			sx={{
 				bottom: "8%",
-				right: "15%",
+				display: { xs: "none", lg: "flex" },
+				right: { lg: "5%", xl: "15%" },
 				transform: "rotate(-90deg)",
 				position: "fixed",
 				justifyContent: "center",

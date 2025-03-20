@@ -111,7 +111,7 @@ export const Navbar = () => {
 													setCopied(false);
 												}, 3000);
 											}}
-											sx={{ p: 1 }}
+											sx={{ p: 1, background: theme.palette.secondary.dark }}
 										>
 											<Stack
 												direction={"row"}
@@ -157,7 +157,7 @@ export const Navbar = () => {
 													}}
 												>
 													<MailIcon size={16} />
-													<Typography variant="caption">
+													<Typography variant="caption" fontWeight={700}>
 														grondin.kevin.webdev@gmail.com
 													</Typography>
 												</Box>
@@ -201,6 +201,8 @@ export const Navbar = () => {
 									title="Accueil"
 								/>
 							</MenuItem>
+							<Divider sx={{ background: theme.palette.secondary.dark }} />
+
 							<MenuItem
 								onClick={() => {
 									setAnchorEl(null);
@@ -212,6 +214,8 @@ export const Navbar = () => {
 									title="A propos"
 								/>
 							</MenuItem>
+							<Divider sx={{ background: theme.palette.secondary.dark }} />
+
 							<MenuItem
 								onClick={() => {
 									setAnchorEl(null);
@@ -223,15 +227,15 @@ export const Navbar = () => {
 									title="Compétences"
 								/>
 							</MenuItem>
-							<Divider />
+							<Divider sx={{ background: theme.palette.secondary.dark }} />
 							<Stack>
-								<Typography variant="subtitle2" sx={{ mx: 2 }}>
+								{/* <Typography variant="subtitle2" sx={{ mx: 2 }}>
 									Me contacter
-								</Typography>
+								</Typography> */}
 								<MenuItem>
 									<Stack
 										direction={"row"}
-										color={theme.palette.secondary.main}
+										// color={theme.palette.secondary.main}
 										spacing={1}
 										alignItems={"center"}
 									>
@@ -241,7 +245,7 @@ export const Navbar = () => {
 											sx={{ textDecoration: "none" }}
 										>
 											<Typography
-												color={theme.palette.secondary.main}
+												// color={theme.palette.secondary.main}
 												variant="subtitle2"
 											>
 												grondin.kevin.webdev@gmail.com
@@ -253,7 +257,7 @@ export const Navbar = () => {
 									<Stack
 										direction={"row"}
 										spacing={1}
-										color={theme.palette.secondary.main}
+										// color={theme.palette.secondary.main}
 										alignItems={"center"}
 									>
 										<PhoneIcon size={16} />
@@ -263,7 +267,7 @@ export const Navbar = () => {
 											sx={{ textDecoration: "none" }}
 										>
 											<Typography
-												color={theme.palette.secondary.main}
+												// color={theme.palette.secondary.main}
 												variant="subtitle2"
 											>
 												06.72.61.15.75

@@ -31,7 +31,6 @@ export const RightSide = () => {
 				<Stack flexGrow={1}>
 					<Card
 						sx={{
-							background: theme.palette.secondary.dark,
 							display: "flex",
 							gap: 0.5,
 							justifyContent: "center",
@@ -48,7 +47,6 @@ export const RightSide = () => {
 				<Stack flexGrow={1}>
 					<Card
 						sx={{
-							background: theme.palette.secondary.dark,
 							display: "flex",
 							gap: 0.5,
 							justifyContent: "center",
@@ -65,7 +63,6 @@ export const RightSide = () => {
 				<Stack flexGrow={1}>
 					<Card
 						sx={{
-							background: theme.palette.secondary.dark,
 							display: "flex",
 							gap: 0.5,
 							justifyContent: "center",
@@ -269,7 +266,7 @@ export const RightSide = () => {
 								setCopiedMail(false);
 							}, 3000);
 						}}
-						sx={{ p: 1 }}
+						sx={{ p: 1, backgroundColor: theme.palette.secondary.dark }}
 					>
 						<Stack
 							direction={"row"}
@@ -311,7 +308,7 @@ export const RightSide = () => {
 								}}
 							>
 								<MailIcon size={16} />
-								<Typography variant="caption">
+								<Typography variant="caption" fontWeight={700}>
 									grondin.kevin.webdev@gmail.com
 								</Typography>
 							</Box>
@@ -328,7 +325,7 @@ export const RightSide = () => {
 								setCopiedPhone(false);
 							}, 3000);
 						}}
-						sx={{ p: 1 }}
+						sx={{ p: 1, backgroundColor: theme.palette.secondary.main }}
 					>
 						<Stack
 							direction={"row"}
@@ -372,7 +369,9 @@ export const RightSide = () => {
 								}}
 							>
 								<PhoneIcon size={16} />
-								<Typography variant="caption">0672611575</Typography>
+								<Typography variant="caption" fontWeight={700}>
+									+33 6 72 61 15 75
+								</Typography>
 							</Box>
 						</Stack>
 					</CardActionArea>
