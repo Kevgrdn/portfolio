@@ -1,5 +1,5 @@
 import { Link, Stack, useTheme } from "@mui/material";
-import { cloneElement, type FC, useState } from "react";
+import { type FC, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useIsMobile } from "../hooks/useIsMobile";
 
@@ -18,7 +18,7 @@ export const CustomLink: FC<CustomLinkProps> = ({ href, title, icon }) => {
 	return (
 		<Stack spacing={0.25} justifyContent={"center"} alignItems={"center"}>
 			<Stack direction={"row"} spacing={1} alignItems={"center"}>
-				{
+				{/* {
 					//@ts-ignore
 					cloneElement(icon, {
 						...(href === loc.pathname
@@ -35,7 +35,8 @@ export const CustomLink: FC<CustomLinkProps> = ({ href, title, icon }) => {
 							transition: "text-decoration 0.3s ease-in-out",
 						},
 					})
-				}
+				} */}
+				{icon}
 				<Link
 					fontSize={"1rem"}
 					onMouseEnter={() => setIsHover(true)}

@@ -6,11 +6,11 @@ import "@fontsource/roboto/700.css";
 import "@fontsource/pacifico"; // Importe la police Pacifico
 
 import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { BouncingMouse } from "./components/ui/BouncingMouse";
 import { Footer } from "./layout/footer/Footer";
 import { Navbar } from "./layout/navbar/Navbar";
-import { useEffect, useState } from "react";
-import { BouncingMouse } from "./components/ui/BouncingMouse";
 export type language = "FR" | "EN";
 
 function App() {
